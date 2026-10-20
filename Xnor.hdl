@@ -6,5 +6,5 @@ CHIP Xnor {
     Nand(a=a, b=nandab, out=n1);
     Nand(a=b, b=nandab, out=n2);
     Nand(a=n1, b=n2, out=n3);
-    Nand(a=n3, b=n3, out=out);
+    Nand(a=n3, b=n3, out=ou);
 }
