@@ -1,0 +1,15 @@
+CHIP FullAdder {
+    IN a, b, c;
+    OUT sum, carry;
+    PARTS:
+    Nand(a=a,b=b,out=Nand1);
+    Nand(a=a,b=Nand1,out=Nand2);
+    Nand(a=Nand1,b=b,out=Nand3);
+    Nand(a=Nand2,b=Nand3,out=Nand4);
+    Nand(a=Nand4, b=c, out=Nand5);
+    Nand(a=Nand1, b=Nand5,out = carry);
+    
+    Nand(a=Nand4,b=Nand5,out=Nand6);
+    Nand(a=c,b=Nand5,out=Nand7);
+    Nand(a=Nand6,b=Nand7,out=sum);
+}
